@@ -1,6 +1,7 @@
-<?php include("includes/head.php"); ?>
-
 <?php 
+
+$page = "inscription";
+
 	if(isset($_POST['submit']))
 	{
 			$i = 0;
@@ -83,4 +84,3 @@
       </form>
     </div> 
 	
-	<?php include("includes/footer.php"); ?>

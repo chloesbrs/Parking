@@ -1,5 +1,5 @@
-<?php include ("includes/head.php");
-
+<?php 
+$page = "login";
 
 	if(isset($_POST['submit']))
 	{
@@ -39,4 +39,3 @@
 
 
 
-<?php include ("includes/footer.php"); ?>
