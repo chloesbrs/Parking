@@ -2,21 +2,19 @@
 
 $page = "inscription";
 
+
 	if(isset($_POST['submit']))
 	{
 			$i = 0;
-			$login = $_POST["login"];
-            $nom = $_POST["nom"];
-            $prenom = $_POST["prenom"];
-			$email = $_POST["email"];
-			$mdp = $_POST["mdp"];
-			$confirm = $_POST["confirm"];
+            $nom = htmlentities($_POST["nom"]);
+            $prenom = htmlentities($_POST["prenom"]);
+            $adresse = htmlentities($_POST["adresse"]);
+            $cp = htmlentities($_POST["cp"]);
+            $ville = htmlentities($_POST["ville"]);
+			$mail = htmlentities($_POST["mail"]);
+			$mdp = htmlentities($_POST["mdp"]);
+			$confirm = htmlentities($_POST["confirm"]);
 			
-			if(empty($login))
-			{
-				$i++;
-				$message .= "Votre login est vide <br/>";
-			}
         if(empty($nom))
 			{
 				$i++;
@@ -27,7 +25,22 @@ $page = "inscription";
 				$i++;
 				$message .= "Votre prenom est vide <br/>";
 			}
-			if(empty($email))
+        if(empty($adresse))
+			{
+				$i++;
+				$message .= "Votre adresse est vide <br/>";
+			}
+        if(empty($cp))
+			{
+				$i++;
+				$message .= "Votre code postal est vide <br/>";
+			}
+        if(empty($ville))
+			{
+				$i++;
+				$message .= "Votre ville est vide <br/>";
+			}
+			if(empty($mail))
 			{
 				$i++;
 				$message .= "Votre email est vide";
@@ -43,11 +56,6 @@ $page = "inscription";
 				$message .="Votre confirmation est vide <br/>";
 			}
 			
-			if($mdp != $confirm)
-			{
-				$i++;
-				$message .="Vos mdps ne correspondent pas <br/>";
-			}
 			
 			if($i>0)
 			{
@@ -55,26 +63,37 @@ $page = "inscription";
 				echo $message;
 			}
 			
-		    $bdd->exec("INSERT INTO user(login,nom,prenom,email,mdp,lvl) VALUES('".$login."','".$nom."','".$prenom."','".$email."','".sha1($mdp)."',1)");
+		    $bdd->exec("INSERT INTO user(nom,prenom,adresse,cp,ville,mail,mdp,attente,lvl) VALUES('".$nom."','".$prenom."','".$adresse."','".$cp."','".$ville."','".$mail."','".sha1($mdp)."',1,1)");
 			$_SESSION["connecte"]= true;
 			$_SESSION["lvl"]= 1;
 			$_SESSION["id"]= $bdd->lastInsertId();
-	
-			header ("location:index.php");
+        
+        if(sha1($_POST['mdp']) != (sha1($_POST['confirm'])))
+          {
+            echo "Vos mots de passe ne correspondent pas. <br />";
+          }
+        else
+        {
+            header('Location: index.php?p=accueil');
+        }
 	}
 
 ?>
-<div class="container">    
+<div class="container">
       <form class="form-signin" action="#" method="post">
         <h2 class="form-signin-heading">Inscrivez-vous</h2>
-        <label for="inputLogin" class="sr-only">login</label>
-        <input type="text" id="inputLogin" class="form-control" placeholder="Login" name="login" autofocus>
         <label for="inputLogin" class="sr-only">Prénom</label>
         <input type="text" id="inputPrenom" class="form-control" placeholder="Prénom" name="prenom" autofocus>
         <label for="inputNom" class="sr-only">Nom</label>
         <input type="text" id="inputNom" class="form-control" placeholder="Nom" name="nom">
+        <label for="inputAdresse" class="sr-only">Adresse</label>
+        <input type="text" id="inputAdresse" class="form-control" placeholder="Adresse" name="adresse">
+        <label for="inputcp" class="sr-only">Code postal</label>
+        <input type="number" id="inputcp" class="form-control" placeholder="Code postal" name="cp">
+        <label for="inputVille" class="sr-only">Ville</label>
+        <input type="text" id="inputVille" class="form-control" placeholder="Ville" name="v ille">
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="email">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="mail">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" name="mdp">
         <label for="inputComfirm" class="sr-only">Password</label>
