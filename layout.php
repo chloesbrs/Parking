@@ -51,9 +51,6 @@
                     <li class="page-scroll">
                        <a href="index.php?p=accueil">Accueil</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#about">à propos</a>
-                    </li>
                      <?php if (isset($_SESSION['connecte']))
                             {
                                 echo "<li class='compte'><a href='index.php?p=logout'>Déconnexion</a></li>";
@@ -73,17 +70,11 @@
                     
                      if(isset($_SESSION['connecte']))
                             {
-                                if($_SESSION['lvl']>2)
+                                if($_SESSION['lvl']=2)
                                   {
                                     echo '<li class="page-scroll">
                                             <a href="gestionadmin.php">Gestion-admin</a>
                                           </li>';
-                                  }
-                                    elseif ($_SESSION['lvl']==2)
-                                  {
-                                     echo '<li class="page-scroll">
-                                                <a href="gestionmoni.php?id='.$_SESSION['id'].'">Gestion-Moniteur</a>
-                                            </li>';
                                   }
                                     else
                                   {
@@ -132,10 +123,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Notre auto-école a été créer dans le but de servir les stars et uniquement les stars, vous vous demandez si c'est possible de passer le permis de conduire avec une Porshe et un personnage connu n'est-ce pas ? Et bien NOUS le faisons !</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Créer en 1980, l'auto-école STEFANOVIC vous donne plusieur aspect de la vie que vous devez savourez avec plaisir durant votre formation.</p>
                 </div>
             </div>
         </div>
@@ -170,8 +159,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>auto-école STEFANOVIC</h3>
-                        <p>Inventé, crée et construit par Marko STEFANOVIC.</p>
+                        <h3>parking</h3>
+                        <p>Inventé, crée et construit</p>
                     </div>
                 </div>
             </div>

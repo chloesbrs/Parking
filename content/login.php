@@ -3,10 +3,10 @@ $page = "login";
 
 	if(isset($_POST['submit']))
 	{
-		$login = $_POST['login'];
+		$mail = $_POST['mail'];
 		$mdp = sha1($_POST['mdp']);
 		
-		$requete = $bdd->query("SELECT * FROM user WHERE login = '".$login."' 
+		$requete = $bdd->query("SELECT * FROM user WHERE mail = '".$mail."' 
 								AND mdp = '".$mdp."'");
 		
 		if($reponse = $requete->fetch())
@@ -14,6 +14,8 @@ $page = "login";
 			$_SESSION["connecte"]= true;
 			$_SESSION['id'] = $reponse['id_u'];
             $_SESSION['lvl'] = $reponse['lvl'];
+            
+            if($_SESSION['lvl']=1)
 			header("location:index.php");
 		}
 		else
@@ -28,8 +30,8 @@ $page = "login";
 <div class="container">
       <form class="form-signin" action="#" method="post">
         <h2 class="form-signin-heading">connectez-vous</h2>
-        <label for="inputEmail" class="sr-only">Login</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Login" name="login">
+        <label for="inputEmail" class="sr-only">E-mail</label>
+        <input type="mail" id="inputEmail" class="form-control" placeholder="E-mail" name="mail">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" name="mdp">
 

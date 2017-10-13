@@ -64,7 +64,7 @@ $page = "inscription";
 	}
 
 ?>
-<div class="container">
+<div class="container">    
       <form class="form-signin" action="#" method="post">
         <h2 class="form-signin-heading">Inscrivez-vous</h2>
         <label for="inputLogin" class="sr-only">login</label>
