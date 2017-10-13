@@ -1,15 +1,6 @@
 <?php
 session_start();
-    try
-            {
-
-                $bdd = new PDO("mysql:host=localhost;dbname=parking;charset=utf8","root","");
-
-            }
-            catch(Exception $e)
-            {
-				die("Erreur bdd non trouvée");
-            }
+  require "modele/connexion.php";
 
 if(!isset($_GET['p']) || $_GET['p'] == "")
 {
