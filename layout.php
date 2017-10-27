@@ -76,19 +76,19 @@
                                 if($_SESSION['lvl']>2)
                                   {
                                     echo '<li class="page-scroll">
-                                            <a href="gestionadmin.php">Gestion-admin</a>
+                                            <a href="index.php?p=gestionadmin">Gestion-admin</a>
                                           </li>';
                                   }
                                     elseif ($_SESSION['lvl']==2)
                                   {
                                      echo '<li class="page-scroll">
-                                                <a href="gestionmoni.php?id='.$_SESSION['id'].'">Gestion-Moniteur</a>
+                                                <a href="gestionmoni.php?id_u='.$_SESSION['id_u'].'">Gestion-Moniteur</a>
                                             </li>';
                                   }
                                     else
                                   {
                                      echo '<li class="page-scroll">
-                                                <a href="gestionmembre.php?id='.$_SESSION['id'].'">Gestion-Membres</a>
+                                                <a href="index.php?p=gestionmembre&&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
                                             </li>';
                                   }
 
@@ -132,10 +132,11 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Notre auto-école a été créer dans le but de servir les stars et uniquement les stars, vous vous demandez si c'est possible de passer le permis de conduire avec une Porshe et un personnage connu n'est-ce pas ? Et bien NOUS le faisons !</p>
+                    <p>Ne perdez plus votre temps à chercher une place. Avec CM PARK, vous la trouvez et la réservez en quelques clics.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Créer en 1980, l'auto-école STEFANOVIC vous donne plusieur aspect de la vie que vous devez savourez avec plaisir durant votre formation.</p>
+                    <p>Notre parking vous facilite la vi(ll)e!<br>
+                    Notre support client est disponible du lundi au vendredi de 9h à 13h et de 14h à 19h</p>
                 </div>
             </div>
         </div>
@@ -146,8 +147,8 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>Paris 15</p>
+                        <h3>Localisation</h3>
+                        <p>Paris 17</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Nous contacter</h3>
@@ -170,8 +171,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>auto-école STEFANOVIC</h3>
-                        <p>Inventé, crée et construit par Marko STEFANOVIC.</p>
+                        <h3>CM PARK</h3>
+                        <p>Confiez-nous votre voiture!</p>
                     </div>
                 </div>
             </div>
