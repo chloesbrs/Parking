@@ -15,7 +15,7 @@
 
     <!-- Theme CSS -->
     <link href="css/style.css" rel="stylesheet">
-   
+
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -68,9 +68,9 @@
                                       </li>";
                             }
                     ?>
-                    
+
                     <?php
-                    
+
                      if(isset($_SESSION['connecte']))
                             {
                                 if($_SESSION['lvl']>2)
@@ -91,11 +91,11 @@
                                                 <a href="gestionmembre.php?id='.$_SESSION['id'].'">Gestion-Membres</a>
                                             </li>';
                                   }
-                                                
+
                             }
                     ?>
-                    
-                    
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -117,8 +117,8 @@
         </div>
     </header>
 
-        
-        
+
+
     <div>
         <?php echo $content; ?>
     </div>
@@ -202,12 +202,12 @@
 
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
-    
+
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 			<script type="text/javascript" src="zoombox.js"></script>
 		<script>
         jQuery(function($){
-           
+
             $('a.zoombox').zoombox({
                 theme       : 'zoombox',        //available themes : zoombox,lightbox, prettyphoto, darkprettyphoto, simple
                 opacity     : 0.8,              // Black overlay opacity
@@ -218,9 +218,9 @@
                 gallery     : true,             // Allow gallery thumb view
                 autoplay : false                // Autoplay for video
             });
-            
+
         });
         </script>
-        
+
     </body>
 </html>
