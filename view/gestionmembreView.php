@@ -20,7 +20,7 @@
 
 
         <?php
-          $req = displayPlaceAttente($_SESSION['id']);
+          $req = displayPlaceAttente($_SESSION['id_u']);
         ?>
 
         <div class="col-xs-12 col-md-5 text-middle margin-right">
@@ -51,8 +51,8 @@
 
 
     <?php
-      $req1 = displayPlaceValide($_SESSION['id']);
-      $req2 = displayPlaceDeny($_SESSION['id']);
+      $req1 = displayPlaceValide($_SESSION['id_u']);
+      $req2 = displayPlaceDeny($_SESSION['id_u']);
     ?>
 
     <div class="row text-middle">
@@ -99,7 +99,7 @@
            <div class="col-xs-12 col-md-5 text-middle">
                <div class="user-block">
             <h3><u>Vos informations</u></h3>
-            <b>Votre email :</b> <?=$info['email'];?><br>
+            <b>Votre email :</b> <?=$info['mail'];?><br>
             <b>Votre nom/prénom :</b> <?=$info['nom']." ".$info['prenom'];?><br>
             <u><b>Changer de mot de passe</b></u>
             <br><br>

@@ -76,7 +76,7 @@
                                 if($_SESSION['lvl']>2) 
                                   {
                                     echo '<li class="page-scroll">
-                                            <a href="index.php?p=gestionadmin">Gestion-admin</a>
+                                            <a href="index.php?p=adminController">Gestion-admin</a>
                                           </li>';
                                   }
                                 
