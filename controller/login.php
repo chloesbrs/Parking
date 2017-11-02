@@ -15,6 +15,7 @@ if(isset($_POST['submit']))
     {
         $_SESSION['connecte'] = true;
         $_SESSION['id_u'] = $reponse['id_u'];
+        $_SESSION['lvl'] = $reponse['lvl'];
         if(isset($_POST['remember']))
         {
             setcookie('auth',$reponse['id_u']."-----".sha1($reponse['mail'].$reponse['mdp'].$_SERVER['REMOTE_ADDR']),time()+(3600*24*3),'/','localhost',false,true); //le dernier argument evite que le cookie soit editable en javascript
