@@ -64,7 +64,7 @@
                                         <a href='index.php?p=login'>Connexion</a>
                                       </li>
                                       <li class='page-scroll'>
-                                        <a href='index.php?p=inscription'>Inscription</a>
+                                        <a href='index.php?p=inscriptionController'>Inscription</a>
                                       </li>";
                             }
                     ?>
@@ -79,13 +79,9 @@
                                             <a href="index.php?p=gestionadmin">Gestion-admin</a>
                                           </li>';
                                   }
-                                    elseif ($_SESSION['lvl']==2)
-                                  {
-                                     echo '<li class="page-scroll">
-                                                <a href="gestionmoni.php?id_u='.$_SESSION['id_u'].'">Gestion-Moniteur</a>
-                                            </li>';
-                                  }
+                                
                                     else
+                                        
                                   {
                                      echo '<li class="page-scroll">
                                                 <a href="index.php?p=gestionmembre&&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>

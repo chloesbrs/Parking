@@ -8,7 +8,7 @@ if(!isset($_GET['p']) || $_GET['p'] == "")
 }
 else
 {
-    if(!file_exists("content/".$_GET['p'].".php"))
+    if(!file_exists("controller/".$_GET['p'].".php"))
         {
             $page = 404;
         }
@@ -16,7 +16,7 @@ else
             $page = $_GET['p'];
     }
     ob_start();//suspend l'affichage
-    require "content/".$page.".php";
+    require "controller/".$page.".php";
     $content = ob_get_contents();//recuperer ce qui n'a pas ete affiché
     ob_end_clean();//reprend l'affichage
 

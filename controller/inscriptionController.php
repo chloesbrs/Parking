@@ -1,9 +1,9 @@
 <?php 
 
-require "model/inscriptionModel.php";
+require "modele/inscriptionModel.php";
 
 
-$page = "inscription";
+$page = "inscriptionController";
 
 
 	if(isset($_POST['submit']))
@@ -77,7 +77,7 @@ $page = "inscription";
         }
 	}
 
-require "model/inscriptionView.php";
+require "view/inscriptionView.php";
 ?>
 
 	
