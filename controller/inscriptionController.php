@@ -2,46 +2,28 @@
 
 require "modele/inscriptionModel.php";
 
-
+    
 $page = "inscriptionController";
 
 
 	if(isset($_POST['submit']))
 	{
 			$i = 0;
-            $nom = htmlentities($_POST["nom"]);
-            $prenom = htmlentities($_POST["prenom"]);
-            $adresse = htmlentities($_POST["adresse"]);
-            $cp = htmlentities($_POST["cp"]);
-            $ville = htmlentities($_POST["ville"]);
-			$mail = htmlentities($_POST["mail"]);
-			$mdp = htmlentities($_POST["mdp"]);
-			$confirm = htmlentities($_POST["confirm"]);
+            $nom = $_POST["nom"];
+            $prenom = $_POST["prenom"];
+			$mail = $_POST["mail"];
+			$mdp = $_POST["mdp"];
+			$confirm = $_POST["confirm"];
 			
-        if(empty($nom))
+            if(empty($nom))
 			{
 				$i++;
 				$message .= "Votre nom est vide <br/>";
 			}
-        if(empty($prenom))
+            if(empty($prenom))
 			{
 				$i++;
 				$message .= "Votre prenom est vide <br/>";
-			}
-        if(empty($adresse))
-			{
-				$i++;
-				$message .= "Votre adresse est vide <br/>";
-			}
-        if(empty($cp))
-			{
-				$i++;
-				$message .= "Votre code postal est vide <br/>";
-			}
-        if(empty($ville))
-			{
-				$i++;
-				$message .= "Votre ville est vide <br/>";
 			}
 			if(empty($mail))
 			{
@@ -58,6 +40,12 @@ $page = "inscriptionController";
 				$i++;
 				$message .="Votre confirmation est vide <br/>";
 			}
+						
+			if($mdp != $confirm)
+			{
+				$i++;
+				$message .="Vos mdps ne correspondent pas <br/>";
+			}
 			
 			
 			if($i>0)
@@ -65,16 +53,20 @@ $page = "inscriptionController";
 				echo "Vous avez ".$i." erreurs<br/>";
 				echo $message;
 			}
-			
+
+        	else{
+             $reponse = inscription($nom, $prenom, $mail, $mdp, $confirm);
         
-        if(sha1($_POST['mdp']) != (sha1($_POST['confirm'])))
-          {
-            echo "Vos mots de passe ne correspondent pas. <br />";
-          }
-        else
-        {
-            header('Location: index.php?p=accueil');
-        }
+             $_SESSION['connecte'] = true;
+             $_SESSION['id_u'] = $bdd->lastInsertId();
+             $_SESSION['nom'] = $nom;
+             $_SESSION['prenom'] = $prenom;
+             $_SESSION['mail'] = $mail;
+             $_SESSION['lvl'] = 1;   
+            
+            header("location: index.php");
+            }
+            
 	}
 
 require "view/inscriptionView.php";
