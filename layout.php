@@ -84,7 +84,7 @@
                                         
                                   {
                                      echo '<li class="page-scroll">
-                                                <a href="index.php?p=gestionmembre&&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
+                                                <a href="index.php?p=gestionmembreController&&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
                                             </li>';
                                   }
 
