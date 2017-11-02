@@ -83,8 +83,8 @@
                                     else
                                         
                                   {
-                                     echo '<li class="page-scroll">
-                                                <a href="index.php?p=gestionmembreController&&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
+                                     echo '<li class="page-scfroll">
+                                                <a href="index.php?p=gestionmembreController&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
                                             </li>';
                                   }
 
