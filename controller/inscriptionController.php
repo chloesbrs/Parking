@@ -2,7 +2,7 @@
 
 require "modele/inscriptionModel.php";
 
-
+    
 $page = "inscriptionController";
 
 
