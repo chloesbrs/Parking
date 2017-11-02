@@ -2,9 +2,9 @@
       <form class="form-signin" action="#" method="post">
         <h2 class="form-signin-heading">Inscrivez-vous</h2>
         <label for="inputLogin" class="sr-only">Nom</label>
-        <input type="text" id="inputPrenom" class="form-control" placeholder="Som" name="nom" autofocus>
+        <input type="text" id="inputPrenom" class="form-control" placeholder="Nom" name="nom" autofocus>
         <label for="inputNom" class="sr-only">Prénom</label>
-        <input type="text" id="inputNom" class="form-control" placeholder="Prénom" name="prenom">s
+        <input type="text" id="inputNom" class="form-control" placeholder="Prénom" name="prenom">
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="mail">
         <label for="inputPassword" class="sr-only">Password</label>
