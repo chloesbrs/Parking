@@ -70,10 +70,10 @@
                     ?>
 
                     <?php
-
+                    
                      if(isset($_SESSION['connecte']))
                             {
-                                if($_SESSION['lvl']>2)
+                                if($_SESSION['lvl']>2) 
                                   {
                                     echo '<li class="page-scroll">
                                             <a href="index.php?p=gestionadmin">Gestion-admin</a>
