@@ -1,32 +1,23 @@
-<div class="container-full">
-<div class="corps">
-    <div class="row">
-        <h2 class='text-middle'>
-            <b>Bonjour <?= $info['prenom'];?> !</b>
-        </h2>
-        <h4><p class="text-middle col-xs-12 col-md-12">Bienvenue sur votre espace personnel, d'ici vous pourrez réserver vos places de parking, consulter l'état de votre demande de réservation, votre historique de places et changer vos informations personnelles.</p></h4>
-    </div>
-<!-- ---------------- RESERVATION DE PLACES -------------- -->
+
 
     <div class="row text-middle">
         <div class="col-xs-12 col-md-5 text-middle">
-           <div class="user-block">
             <section>
                 <h3><u>Réserver votre place</u></h3>
             </section>
         <h4>
           <form action="#" method="post">
-            Choisissez la date de début:<br>
-            <input type="date" name="deb" class="text-middle"><br><br>
-            Choisissez la date de fin:<br>
+            Date de début:<br>
+            <input type="date" name="debut" class="text-middle"><br><br>
+            Date de fin:<br>
             <input type="date" name="fin" class="text-middle"><br><br>
             <input type="submit" name="submit">
           </form>
         </h4>
-          </div>
+         
         </div>
 
-<!-- ------------------ DEMANDE DE PLACES ---------------- -->
+
 
         <?php
           $req = displayPlaceAttente($_SESSION['id']);
@@ -57,7 +48,7 @@
         </div>
         </div>
     </div>
-<!-- ---------------- HISTORIQUE DES PLACES ---------- -->
+
 
     <?php
       $req1 = displayPlaceValide($_SESSION['id']);
@@ -115,5 +106,4 @@
         </div>
     </div>
     </div>
-</div>
-</div>
+

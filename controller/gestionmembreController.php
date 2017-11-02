@@ -1,12 +1,11 @@
 <?php
 
-
     require "modele/gestionmembreModel.php";
 if(isset($_SESSION['connecte']))
 {
     
 
-    $id_u = $_SESSION['id'];
+    $id_u = $_SESSION['id_u'];
 
     $reponse = displayReservedPlace($id_u);
     $info = displayInfo($id_u);
@@ -16,23 +15,19 @@ if(isset($_SESSION['connecte']))
     if(isset($_POST['submit']))
     {
         
-        $deb = $_POST['deb'];
+        $debut = $_POST['debut'];
         $fin = $_POST['fin'];
         
-        reservePlace($id_u, $deb, $fin);
+        reservePlace($id_u, $debut, $fin);
         
-        var_dump($_POST);
-        
-        header("location:".BASE_URL."/userController");
+       
+        header("location:index.php?p=gestionmembreController");
     }
 }
 else
 {
-    header("Location:index.php?p=accueil");
+    header("location:index.php?p=accueil");
 }
     require "view/gestionmembreView.php";
 
 ?>
-
-
-
