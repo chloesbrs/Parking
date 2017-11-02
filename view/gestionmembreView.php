@@ -20,7 +20,7 @@
 
 
         <?php
-          $req = displayPlaceAttente($_SESSION['id']);
+          $req = displayPlaceAttente($_SESSION['id_u']);
         ?>
 
         <div class="col-xs-12 col-md-5 text-middle margin-right">
