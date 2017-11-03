@@ -1,7 +1,7 @@
 <?php
 
     require "modele/gestionmembreModel.php";
-if(isset($_SESSION['connecte']))
+if(isset($_SESSION['connecte']) && ($_SESSION['lvl'] == 2))
 {
     
 
