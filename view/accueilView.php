@@ -1,3 +1,3 @@
-<h1>
+<center><h1>
 Bienvenue sur le site référence de reservation de parking!
-</h1>
+    </h1></center>
