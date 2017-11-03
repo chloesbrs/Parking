@@ -40,7 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php?p=accueilController">Home</a>
+                <a class="navbar-brand" href="index.php?p=accueil">Home</a>
             </div>
  <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,7 +49,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                       <a href="index.php?p=accueilController">Accueil</a>
+                       <a href="index.php?p=accueil">Accueil</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">à propos</a>

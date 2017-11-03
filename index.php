@@ -10,7 +10,7 @@ session_start();
 
 if(!isset($_GET['p']) || $_GET['p'] == "")
 {
-        $page = "accueilController";
+        $page = "accueil";
 }
 else
 {
