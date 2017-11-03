@@ -25,7 +25,7 @@
 
         <div class="col-xs-12 col-md-5 text-middle margin-right">
            <div class="user-block">
-            <h3><u>Demande de places</u></h3>
+            <h3><u>Demande de place</u></h3>
             <table class="text-middle">
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
@@ -93,7 +93,7 @@
             </table>
         </div>
        </div>
-<!-- ---------------- Informations du compte ------------ -->
+
 
            <div class="col-xs-12 col-md-5 text-middle">
                <div class="user-block">
