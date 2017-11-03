@@ -80,13 +80,19 @@
                                           </li>';
                                   }
                                 
-                                    else
-                                        
+                                 elseif($_SESSION['lvl']>1)    
                                   {
                                      echo '<li class="page-scfroll">
                                                 <a href="index.php?p=gestionmembreController&id_u='.$_SESSION['id_u'].'">Gestion-Membres</a>
                                             </li>';
                                   }
+                                
+                                else
+                                {
+                                      echo '<li class="page-scfroll">
+                                                <a href="#">Attendez Validation D\'inscription</a>
+                                            </li>';                                   
+                                }
 
                             }
                     ?>

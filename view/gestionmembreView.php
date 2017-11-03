@@ -44,7 +44,6 @@
               ?>
 
             </table>
-            <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>
         </div>
         </div>
     </div>
@@ -101,7 +100,6 @@
             <h3><u>Vos informations</u></h3>
             <b>Votre email :</b> <?=$info['mail'];?><br>
             <b>Votre nom/prénom :</b> <?=$info['nom']." ".$info['prenom'];?><br>
-            <u><b>Changer de mot de passe</b></u>
             <br><br>
         </div>
     </div>

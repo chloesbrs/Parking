@@ -1,30 +1,38 @@
-<!--- JONATHAN ---->
-<!--
-<table>
-    <tr>
-        <th>Nom / Prenom </th>
-        <th>Action</th>
-    </tr>
-    
-    <?php
-    foreach($r as $k => $v)
-        {
-            echo "
-                <tr>
-                    <td>".$v['nom']."  ".$v['prenom']."</td>
-                    <td><a href='index.php?p=adminController&id=".$v['id_u']."'>Supprimer</a> / 
-                    <a href='index.php?p=adminController&id_p=".$v['id_u']."'>Définir Place </a> 
-                    </td>
-                </tr>";
-        }
-    ?>
-</table>
-
-- FIN JONATHAN -
-=======
--->
-
 <div class="container">
+
+ <div class="row">
+     <div class="col-xs-12 col-md-12 text-middle">
+             <h1><u>Confirmer inscription</u></h1>
+             <table class="text-middle tableAdmin">
+             <th class="text-middle col-xs-3 col-md-4">Nom / Prenom </th>
+             <th class="text-middle col-xs-3 col-md-4">Email </th>
+             <th class="text-middle col-xs-3 col-md-4">confirmer / refuser </th>
+                
+        <?php
+        foreach($acceptme as $k => $v)
+            {
+        ?>
+                    <tr>
+                        <td class='col-xs-4 col-md-4'>
+                            <?= $v['nom']."  ".$v['prenom'];?>
+                        </td>
+                        <td class='col-xs-4 col-md-4'>
+                            <?= $v['mail'];?>
+                        </td>
+                        <td class='col-xs-4 col-md-4'>
+                            <a href="<?=BASE_URL;?>/acceptinscrit/<?=$v['id_u'];?>">confirmer</a>
+                            <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Supprimer</a>
+                        </td>
+                    </tr>
+        <?php
+            }
+        ?>
+        
+
+
+            </table>
+     </div>
+ </div>
 
  <div class="row">
      <div class="col-xs-12 col-md-12 text-middle">
@@ -35,7 +43,7 @@
                 <th class="text-middle col-xs-3 col-md-3">Date</th>
                 <th class="text-middle col-xs-3 col-md-3">Etat</th>
                 
-    <?php
+     <?php
                  while($reponse = $req->fetch()){
                ?>
                 <tr>
@@ -70,10 +78,6 @@
                         </td>
                         <td class='col-xs-4 col-md-4'>
                             <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Supprimer</a>
-<!--
-                            / 
-                            <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Bannir</a>
--->
                         </td>
                     </tr>
         <?php
@@ -93,6 +97,37 @@
             <th class="text-middle col-xs-4 col-md-4">Action</th>
             <?php
                 while($reponse = $usedPlace->fetch())
+                {
+            ?>
+                    <tr>
+                       <td class='col-xs-4 col-md-4'>
+                            <?= $reponse['nom']." ".$reponse['prenom'];?>
+                      </td>
+                      <td class='col-xs-4 col-md-4'>
+                            <?= $reponse['nom_p'];?>
+                      </td>
+                      <td class='col-xs-4 col-md-4'>
+                            <a href="<?=BASE_URL;?>/deleteUsedPlace/<?= $reponse['id_p'];?>">Supprimer</a>
+                      </td>
+                    </tr>
+
+               <?php } ?>
+
+            </table>
+        </div>
+        
+    </div>
+        <div class="row">
+        
+        <div class="col-xs-12 col-md-12">
+            <h1 class="text-middle"><u>historique de refus</u></h1>
+            
+        <table class="text-middle tableAdmin">
+            <th class="text-middle col-xs-4 col-md-4">Utilisateur </th>
+            <th class="text-middle col-xs-4 col-md-4">Numéro de place </th>
+            <th class="text-middle col-xs-4 col-md-4">Action</th>
+            <?php
+                while($reponse = $usedPlaceRefus->fetch())
                 {
             ?>
                     <tr>
